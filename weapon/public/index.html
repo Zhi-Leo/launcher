@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>无畏契约皮肤商城</title>
+  <!-- 网站图标 -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="shortcut icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="apple-touch-icon" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- 左侧广告栏 -->
+  <aside class="sidebar sidebar-left">
+    <div class="ad-container">
+      <div class="ad-item active">
+        <img src="images/ad-left-1.svg" alt="限时特惠" class="ad-image">
+        <div class="ad-overlay">
+          <button class="ad-btn">立即购买</button>
+        </div>
+      </div>
+      <div class="ad-item">
+        <img src="images/ad-left-2.svg" alt="新赛季开启" class="ad-image">
+        <div class="ad-overlay">
+          <button class="ad-btn">查看详情</button>
+        </div>
+      </div>
+    </div>
+    <div class="ad-indicators">
+      <span class="indicator active" data-index="0"></span>
+      <span class="indicator" data-index="1"></span>
+    </div>
+  </aside>
+
+  <!-- 右侧广告栏 -->
+  <aside class="sidebar sidebar-right">
+    <div class="ad-container">
+      <div class="ad-item active">
+        <img src="images/ad-right-1.svg" alt="每日签到" class="ad-image">
+        <div class="ad-overlay">
+          <button class="ad-btn">立即签到</button>
+        </div>
+      </div>
+      <div class="ad-item">
+        <img src="images/ad-right-2.svg" alt="热门活动" class="ad-image">
+        <div class="ad-overlay">
+          <button class="ad-btn">查看详情</button>
+        </div>
+      </div>
+    </div>
+    <div class="ad-indicators">
+      <span class="indicator active" data-index="0"></span>
+      <span class="indicator" data-index="1"></span>
+    </div>
+  </aside>
+
+  <div class="container">
+    <!-- 页面标题 -->
+    <div class="page-title">
+      <div class="title-content">
+        <img src="images/favicon.svg" alt="无畏契约" class="title-icon">
+        <h1>无畏契约手游交易平台</h1>
+      </div>
+    </div>
+
+    <!-- 顶部导航栏 -->
+    <header class="header">
+      <div class="nav-tabs">
+        <div class="tab active" data-tab="price">
+          <span>价格</span>
+        </div>
+        <div class="tab" data-tab="appearance">
+          <span>外观</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+        <div class="tab" data-tab="category">
+          <span>类别</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+        <div class="tab" data-tab="quality">
+          <span>品质</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+        <div class="tab" data-tab="collectibles">
+          <span>收藏品</span>
+          <span class="dropdown-icon">▼</span>
+        </div>
+      </div>
+
+      <!-- 价格筛选区域 -->
+      <div class="filter-section" id="price-filter">
+        <div class="price-inputs">
+          <div class="input-group">
+            <label>¥输入最低</label>
+            <input type="number" id="min-price" placeholder="最低价格" min="0">
+          </div>
+          <div class="input-group">
+            <label>¥输入限高</label>
+            <input type="number" id="max-price" placeholder="最高价格" min="0">
+          </div>
+          <button class="filter-btn" id="filter-btn">过滤</button>
+        </div>
+      </div>
+
+      <!-- 其他筛选区域（初始隐藏） -->
+      <div class="filter-section hidden" id="appearance-filter">
+        <div class="filter-options" id="appearance-options">
+          <!-- 外观选项将通过 JavaScript 动态加载 -->
+        </div>
+        <button class="filter-btn" data-filter-type="appearance">应用筛选</button>
+      </div>
+      <div class="filter-section hidden" id="category-filter">
+        <div class="filter-options" id="category-options">
+          <!-- 类别选项将通过 JavaScript 动态加载 -->
+        </div>
+        <button class="filter-btn" data-filter-type="category">应用筛选</button>
+      </div>
+      <div class="filter-section hidden" id="quality-filter">
+        <div class="filter-options" id="quality-options">
+          <!-- 品质选项将通过 JavaScript 动态加载 -->
+        </div>
+        <button class="filter-btn" data-filter-type="quality">应用筛选</button>
+      </div>
+      <div class="filter-section hidden" id="collectibles-filter">
+        <div class="filter-options" id="collectibles-options">
+          <!-- 收藏品选项将通过 JavaScript 动态加载 -->
+        </div>
+        <button class="filter-btn" data-filter-type="collectibles">应用筛选</button>
+      </div>
+    </header>
+
+    <!-- 商品展示区域 -->
+    <main class="main-content">
+      <div class="items-grid" id="items-grid">
+        <!-- 商品卡片将通过 JavaScript 动态加载 -->
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

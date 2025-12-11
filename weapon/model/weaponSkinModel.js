@@ -73,10 +73,40 @@ async function updateWeaponSkinPrice(id, newPrice) {
   }
 }
 
+// model/weaponSkinModel.js（新增）
+async function updateWeaponSkinStock(id, newStock) {
+  // 校验
+  if (!id) throw new Error('ID 不能为空');
+  if (typeof newStock !== 'number' || newStock < 0) {
+    throw new Error('库存必须为非负整数');
+  }
+
+  try {
+    const [result] = await pool.execute(
+      'UPDATE weapon_skins SET stock = ? WHERE id = ?',
+      [newStock, id]
+    );
+    if (result.affectedRows === 0) {
+      throw new Error(`未找到 ID=${id} 的数据`);
+    }
+    return {
+      success: true,
+      message: `库存更新为 ${newStock}`,
+      affectedRows: result.affectedRows
+    };
+  } catch (error) {
+    console.error(`❌ 修改 ID=${id} 库存失败：`, error.message);
+    throw error;
+  }
+}
+
+
+
 // 更新暴露（添加新功能）
 module.exports = {
   getAllWeaponSkins,
   addWeaponSkin, // 新增2
   deleteWeaponSkin, // 新增3
-  updateWeaponSkinPrice // 新增4
+  updateWeaponSkinPrice, // 新增4
+  updateWeaponSkinStock // 新增5
 };

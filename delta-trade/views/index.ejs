@@ -1,0 +1,87 @@
+<%- include('layout') %>
+
+<% block body %>
+  <!-- 筛选区域 -->
+  <div class="filter-section">
+    <form id="filter-form" method="GET">
+      <div class="filter-group">
+        <label>分类:</label>
+        <select name="category" onchange="this.form.submit()">
+          <option value="">全部</option>
+          <% categories.forEach(category => { %>
+            <option 
+              value="<%= category %>" 
+              <%= currentParams.category === category ? 'selected' : '' %>>
+              <%= category %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>品质:</label>
+        <select name="quality" onchange="this.form.submit()">
+          <option value="">全部</option>
+          <% qualities.forEach(quality => { %>
+            <option 
+              value="<%= quality %>" 
+              <%= currentParams.quality === quality ? 'selected' : '' %>>
+              <%= quality %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div class="filter-group search-group">
+        <input 
+          type="text" 
+          name="keyword" 
+          placeholder="搜索商品名称..." 
+          value="<%= currentParams.keyword || '' %>">
+        <button type="submit">搜索</button>
+      </div>
+
+      <div class="filter-group">
+        <label>排序:</label>
+        <select name="sort" onchange="this.form.submit()">
+          <option value="price" <%= currentParams.sort === 'price' ? 'selected' : '' %>>价格</option>
+          <option value="sell_count" <%= currentParams.sort === 'sell_count' ? 'selected' : '' %>>销量</option>
+        </select>
+        <select name="order" onchange="this.form.submit()">
+          <option value="ASC" <%= currentParams.order === 'ASC' ? 'selected' : '' %>>升序</option>
+          <option value="DESC" <%= currentParams.order === 'DESC' ? 'selected' : '' %>>降序</option>
+        </select>
+      </div>
+    </form>
+  </div>
+
+  <!-- 商品列表 -->
+  <div class="items-grid">
+    <% if (items.length > 0) { %>
+      <% items.forEach(item => { %>
+        <div class="item-card">
+          <div class="item-img">
+            <img src="<%= item.img_url %>" alt="<%= item.name %>" onerror="this.src='/images/default.png'">
+          </div>
+          <div class="item-info">
+            <h3 class="item-name <%= item.quality.toLowerCase() %>"><%= item.name %></h3>
+            <div class="item-category"><%= item.category %></div>
+            <div class="item-price">
+              <span class="price">¥<%= item.price %></span>
+              <span class="currency">哈夫币</span>
+            </div>
+            <div class="item-meta">
+              <span>库存: <%= item.stock %></span>
+              <span>销量: <%= item.sell_count %></span>
+            </div>
+            <button class="buy-btn">立即购买</button>
+          </div>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <div class="empty-state">
+        <p>未找到符合条件的商品</p>
+      </div>
+    <% } %>
+  </div>
+<% endblock %>

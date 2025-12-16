@@ -1,0 +1,211 @@
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Microsoft Yahei', sans-serif;
+}
+
+body {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部样式 */
+.header {
+  background: #16213e;
+  padding: 20px 0;
+  border-bottom: 2px solid #0f3460;
+}
+
+.logo {
+  color: #00e0ff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+}
+
+/* 主要内容 */
+.main {
+  padding: 30px 0;
+}
+
+/* 筛选区域 */
+.filter-section {
+  background: #16213e;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-group label {
+  color: #00e0ff;
+  font-weight: bold;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  background: #2a2a44;
+  border: 1px solid #0f3460;
+  color: #e0e0e0;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-group {
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+}
+
+.search-group input {
+  width: 200px;
+}
+
+button {
+  padding: 8px 16px;
+  background: #00e0ff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #00b8d4;
+}
+
+/* 商品网格 */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* 商品卡片 */
+.item-card {
+  background: #16213e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 224, 255, 0.2);
+}
+
+.item-img {
+  height: 180px;
+  background: #2a2a44;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.item-info {
+  padding: 15px;
+}
+
+.item-name {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* 品质颜色 */
+.普通 { color: #e0e0e0; }
+.精良 { color: #4CAF50; }
+.稀有 { color: #2196F3; }
+.史诗 { color: #9C27B0; }
+.传说 { color: #FF9800; }
+
+.item-category {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.item-price {
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #00e0ff;
+}
+
+.currency {
+  font-size: 14px;
+  color: #999;
+}
+
+.item-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 15px;
+}
+
+.buy-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0f3460;
+  color: #00e0ff;
+  border: 1px solid #00e0ff;
+}
+
+.buy-btn:hover {
+  background: #00e0ff;
+  color: #1a1a2e;
+}
+
+/* 空状态 */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 50px;
+  color: #999;
+  font-size: 18px;
+}
+
+/* 页脚 */
+.footer {
+  background: #16213e;
+  padding: 20px 0;
+  text-align: center;
+  color: #999;
+  border-top: 2px solid #0f3460;
+  margin-top: 50px;
+}

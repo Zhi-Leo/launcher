@@ -166,7 +166,7 @@ async function testUpdateWeaponSkinStock() {
 
 // 👉 执行当前测试（只运行这一个）
 // testGetAllWeaponSkins(); //查询
-// testAddWeaponSkin(); //新增
+testAddWeaponSkin(); //新增
 // testDeleteWeaponSkin(); //删除
 // testUpdateWeaponSkinPrice(); //修改价格
 // updateWeaponSkinPrice(5, 1899); //修改价格运行日志  问题：修改 ID=5 价格失败： pool is not defined
